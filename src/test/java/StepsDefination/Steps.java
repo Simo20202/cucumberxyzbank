@@ -1,15 +1,18 @@
 package StepsDefination;
 
+import Pages.HomePage;
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class Steps {
+public class Steps extends Base {
 
 
     @Given("The user is on the XYZ Banking home page")
     public void the_user_is_on_the_xyz_banking_home_page() {
+        homePage.verifyThatXYZBankHomeIsDisplayed();
 
     }
     @And("The user click customer login")
@@ -43,5 +46,10 @@ public class Steps {
     @Then("The Deposit is successful")
     public void the_deposit_is_successful() {
 
+    }
+
+    @After
+    public void closeBrowser(){
+        driver.quit();
     }
 }
