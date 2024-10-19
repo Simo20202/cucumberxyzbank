@@ -1,11 +1,13 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import java.time.Duration;
 
@@ -31,45 +33,53 @@ public class AccountPage {
     @FindBy(xpath = "//select[@id='accountSelect']")
     WebElement accNumber_xpath;
 
-    public AccountPage(WebDriver driver){
+    // Scenario 3
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/strong[2]")
+    WebElement accBalance_xpath;
+
+    public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void verifyThatTheCustomerSuccessfulLogin(){
+    public void verifyThatTheCustomerSuccessfulLogin() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(welcomeTitle_xpath));
         welcomeTitle_xpath.isDisplayed();
     }
 
-    public void clickDeposit(){
+    public void clickDeposit() {
         deposit_xpath.click();
     }
 
-    public void enterAmountTobeDeposited(String deposit){
+    public void enterAmountTobeDeposited(String deposit) {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(amountToBeDeposited_xpath));
         amountToBeDeposited_xpath.sendKeys(deposit);
     }
 
-    public void clickDepositButton(){
+    public void clickDepositButton() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(depositButton_xpath));
         depositButton_xpath.click();
     }
 
-    public void verifyThatTheDepositWasSuccessful(){
+    public void verifyThatTheDepositWasSuccessful() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(depositSuccess_xpath));
         depositSuccess_xpath.isDisplayed();
     }
 
     // Scenario 2
-    public void selectAccountNumberTwo(){
+    public void selectAccountNumberTwo() {
         Select dropdown = new Select(accNumber_xpath);
         dropdown.selectByVisibleText("1005");
     }
 
-    public void selectAccountNumberThree(){
+    public void selectAccountNumberThree() {
         Select dropdown = new Select(accNumber_xpath);
         dropdown.selectByVisibleText("1006");
     }
 
     // Scenario 3
+    public void verifyTheAccBalance() {
+        String originalBalance = accBalance_xpath.getText();
+        System.out.println(originalBalance);
+    }
 
 }

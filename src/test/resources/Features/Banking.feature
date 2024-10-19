@@ -49,8 +49,9 @@ Feature: Digital Banking
     And The user select customer number three
     And The user click login
     And The user validates that login is successful
-#    And The user select deposit
-#    And The user enters deposit<deposit>
+    And The user validates the current balance
+    And The user select deposit
+    And The user enters deposit<deposit>
     Examples:
       | deposit |
       | 31459   |

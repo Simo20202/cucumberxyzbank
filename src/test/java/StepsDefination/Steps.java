@@ -95,6 +95,12 @@ public class Steps extends Base {
 
     }
 
+    @And("The user validates the current balance")
+    public void the_user_validates_the_current_balance() {
+        accountPage.verifyTheAccBalance();
+
+    }
+
     @After
     public void closeBrowser(){
         driver.quit();
