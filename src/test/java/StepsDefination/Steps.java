@@ -49,10 +49,12 @@ public class Steps extends Base {
     }
     @And("The user enters deposit{int}")
     public void the_user_enters_deposit(Integer deposit) {
+        accountPage.enterAmountTobeDeposited(String.valueOf(deposit));
 
     }
     @When("The user click deposit")
     public void the_user_click_deposit() {
+        accountPage.clickDepositButton();
 
     }
     @Then("The Deposit is successful")

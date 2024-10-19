@@ -17,6 +17,12 @@ public class AccountPage {
     @FindBy(xpath = "//button[contains(.,'Deposit')]")
     WebElement deposit_xpath;
 
+    @FindBy(xpath = "//button[contains(.,'Deposit')]")
+    WebElement amountToBeDeposited_xpath;
+
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Deposit')]")
+    WebElement DepositButton_xpath;
+
     public AccountPage(WebDriver driver){
         this.driver = driver;
     }
@@ -28,5 +34,14 @@ public class AccountPage {
 
     public void clickDeposit(){
         deposit_xpath.click();
+    }
+
+    public void enterAmountTobeDeposited(String deposit){
+        amountToBeDeposited_xpath.sendKeys(deposit);
+    }
+
+    public void clickDepositButton(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(DepositButton_xpath));
+        DepositButton_xpath.click();
     }
 }
