@@ -18,18 +18,28 @@ public class Steps extends Base {
     @And("The user click customer login")
     public void the_user_click_customer_login() {
         homePage.clickCustomerLogin();
+
+    }
+
+    @Given("The user validates that your name label is displayed")
+    public void the_user_validates_that_your_name_label_is_displayed() {
+        homePage.verifyThatYourNameLabelIsDisplayed();
+
     }
     @And("The user select a customer name")
     public void the_user_select_a_customer_name() {
-        homePage.selectYourName();
+        homePage.selectCustomerName();
+
 
     }
     @And("The user click login")
     public void the_user_click_login() {
+        homePage.clickLoginButton();
 
     }
     @And("The user validates that login is successful")
     public void the_user_validates_that_login_is_successful() {
+        accountPage.verifyThatTheCustomerSuccessfulLogin();
 
     }
     @And("The user select deposit")

@@ -20,8 +20,14 @@ public class HomePage {
     @FindBy(xpath = "//button[contains(.,'Customer Login')]")
     WebElement customerLogin_xpath;
 
-    @FindBy(xpath = "userSelect")
-    WebElement yourName_id;
+    @FindBy(xpath = "//label[contains(.,'Your Name :')]")
+    WebElement yourName_xpath;
+
+    @FindBy(xpath = "//select[contains(@id,'userSelect')]")
+    WebElement yourNameDrp_xpath;
+
+    @FindBy(xpath = "//button[contains(.,'Login')]")
+    WebElement login_xpath;
 
     public HomePage(WebDriver driver){
         this.driver =driver;
@@ -36,9 +42,19 @@ public class HomePage {
         customerLogin_xpath.click();
     }
 
-    public void selectYourName(){
-        Select dropdown = new Select(yourName_id);
+    public void verifyThatYourNameLabelIsDisplayed(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(yourName_xpath));
+        yourName_xpath.isDisplayed();
+
+    }
+
+    public void selectCustomerName(){
+        Select dropdown = new Select(yourNameDrp_xpath);
         dropdown.selectByVisibleText("Hermoine Granger");
+    }
+
+    public void clickLoginButton(){
+        login_xpath.click();
     }
 
 }
