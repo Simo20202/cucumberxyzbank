@@ -88,6 +88,13 @@ public class Steps extends Base {
 
     }
 
+    // Scenario 3
+    @And("The user select customer number three")
+    public void the_user_select_customer_number_three() {
+        homePage.selectCustomerNumberThree();
+
+    }
+
     @After
     public void closeBrowser(){
         driver.quit();

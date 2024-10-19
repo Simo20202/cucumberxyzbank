@@ -40,3 +40,18 @@ Feature: Digital Banking
     Examples:
       | deposit |
       | 1500    |
+
+
+  Scenario Outline: Ensure that a user can successful make a deposit and wthdrawl on the first account
+    Given The user is on the XYZ Banking home page
+    And The user click customer login
+    And The user validates that your name label is displayed
+    And The user select customer number three
+    And The user click login
+    And The user validates that login is successful
+#    And The user select deposit
+#    And The user enters deposit<deposit>
+    Examples:
+      | deposit |
+      | 31459   |
+

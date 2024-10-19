@@ -34,42 +34,49 @@ public class HomePage {
 
     // scenario 2
 
-    public HomePage(WebDriver driver){
-        this.driver =driver;
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public void verifyThatXYZBankHomeIsDisplayed(){
+    public void verifyThatXYZBankHomeIsDisplayed() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(home_xpath));
         home_xpath.isDisplayed();
     }
 
-    public void clickCustomerLogin(){
+    public void clickCustomerLogin() {
         customerLogin_xpath.click();
     }
 
-    public void verifyThatYourNameLabelIsDisplayed(){
+    public void verifyThatYourNameLabelIsDisplayed() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(yourName_xpath));
         yourName_xpath.isDisplayed();
 
     }
 
-    public void selectCustomerNumberOne(){
+    public void selectCustomerNumberOne() {
         Select dropdown = new Select(yourNameDrp_xpath);
         dropdown.selectByVisibleText("Hermoine Granger");
     }
 
-    public void clickLogin(){
+    public void clickLogin() {
         loginButton_xpath.click();
     }
 
-    public void clickLogout(){
+    public void clickLogout() {
         logoutButton_xpath.click();
     }
 
     // Scenario 2
-    public void selectCustomerNumberTwo(){
+    public void selectCustomerNumberTwo() {
         Select dropdown = new Select(yourNameDrp_xpath);
         dropdown.selectByVisibleText("Harry Potter");
     }
 
+    // Scenario 3
+    public void selectCustomerNumberThree() {
+        Select dropdown = new Select(yourNameDrp_xpath);
+        dropdown.selectByVisibleText("Ron Weasly");
+
+
+    }
 }

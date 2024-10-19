@@ -69,4 +69,7 @@ public class AccountPage {
         Select dropdown = new Select(accNumber_xpath);
         dropdown.selectByVisibleText("1006");
     }
+
+    // Scenario 3
+
 }
