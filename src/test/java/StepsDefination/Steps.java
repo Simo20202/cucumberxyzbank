@@ -28,7 +28,7 @@ public class Steps extends Base {
     }
     @And("The user select customer number one")
     public void the_user_select_customer_number_one() {
-        homePage.selectCustomerName();
+        homePage.selectCustomerNumberOne();
 
 
     }
@@ -66,6 +66,13 @@ public class Steps extends Base {
     @And("The user Logout")
     public void the_user_logout() {
         homePage.clickLogout();
+
+    }
+
+    // Scenario 2
+    @And("The user select customer number two")
+    public void the_user_select_customer_number_two() {
+        homePage.selectCustomerNumberTwo();
 
     }
 
