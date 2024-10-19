@@ -13,14 +13,20 @@ public class AccountPage {
     WebDriver driver;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/strong[1]")
-    WebElement WelcomeTitle_xpath;
+    WebElement welcomeTitle_xpath;
+    @FindBy(xpath = "//button[contains(.,'Deposit')]")
+    WebElement deposit_xpath;
 
     public AccountPage(WebDriver driver){
         this.driver = driver;
     }
 
     public void verifyThatTheCustomerSuccessfulLogin(){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(WelcomeTitle_xpath));
-        WelcomeTitle_xpath.isDisplayed();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(welcomeTitle_xpath));
+        welcomeTitle_xpath.isDisplayed();
+    }
+
+    public void clickDeposit(){
+        deposit_xpath.click();
     }
 }

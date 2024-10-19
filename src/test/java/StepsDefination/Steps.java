@@ -44,6 +44,7 @@ public class Steps extends Base {
     }
     @And("The user select deposit")
     public void the_user_select_deposit() {
+        accountPage.clickDeposit();
 
     }
     @And("The user enters deposit{int}")
