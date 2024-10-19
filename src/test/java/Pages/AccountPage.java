@@ -29,7 +29,7 @@ public class AccountPage {
 
     // Scenario 2
     @FindBy(xpath = "//select[@id='accountSelect']")
-    WebElement accNumberTwo_xpath;
+    WebElement accNumber_xpath;
 
     public AccountPage(WebDriver driver){
         this.driver = driver;
@@ -61,7 +61,12 @@ public class AccountPage {
 
     // Scenario 2
     public void selectAccountNumberTwo(){
-        Select dropdown = new Select(accNumberTwo_xpath);
+        Select dropdown = new Select(accNumber_xpath);
         dropdown.selectByVisibleText("1005");
+    }
+
+    public void selectAccountNumberThree(){
+        Select dropdown = new Select(accNumber_xpath);
+        dropdown.selectByVisibleText("1006");
     }
 }

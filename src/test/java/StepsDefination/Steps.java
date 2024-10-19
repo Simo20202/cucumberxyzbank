@@ -82,6 +82,12 @@ public class Steps extends Base {
 
     }
 
+    @Then("The user select the third account")
+    public void the_user_select_the_third_account() {
+        accountPage.selectAccountNumberThree();
+
+    }
+
     @After
     public void closeBrowser(){
         driver.quit();

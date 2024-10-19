@@ -32,10 +32,11 @@ Feature: Digital Banking
     And The user enters deposit<deposit>
     When The user click deposit
     Then The Deposit is successful
+    And The user select the third account
+    And The user enters deposit<deposit>
+    When The user click deposit
+    Then The Deposit is successful
     And The user Logout
-
-
-
     Examples:
       | deposit |
       | 1500    |
