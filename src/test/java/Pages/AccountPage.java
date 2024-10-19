@@ -37,6 +37,15 @@ public class AccountPage {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/strong[2]")
     WebElement accBalance_xpath;
 
+    @FindBy(xpath = "//button[contains(.,'Transactions')]")
+    WebElement transactions_xpath;
+
+    @FindBy(xpath = "//td[@class='ng-binding'][contains(.,'31459')]")
+    WebElement transactionsDetails_xpath;
+
+    @FindBy(xpath = "//button[contains(.,'Back')]")
+    WebElement backButton_xpath;
+
     public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -82,4 +91,23 @@ public class AccountPage {
         System.out.println(originalBalance);
     }
 
+    public void clickTransactions() {
+        transactions_xpath.click();
+
+    }
+
+    public void verifyThatTheTransactionsAppears() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(transactionsDetails_xpath));
+        transactionsDetails_xpath.isDisplayed();
+
+    }
+
+    public void clickBackButton(){
+        backButton_xpath.click();
+    }
+
+    public void verifyThatTheAccountPageIsDisplayed(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(welcomeTitle_xpath));
+        welcomeTitle_xpath.isDisplayed();
+    }
 }

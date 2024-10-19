@@ -21,8 +21,8 @@ public class Steps extends Base {
 
     }
 
-    @Given("The user validates that your name label is displayed")
-    public void the_user_validates_that_your_name_label_is_displayed() {
+    @Given("The user validate that your name label is displayed")
+    public void the_user_validate_that_your_name_label_is_displayed() {
         homePage.verifyThatYourNameLabelIsDisplayed();
 
     }
@@ -37,8 +37,8 @@ public class Steps extends Base {
         homePage.clickLogin();
 
     }
-    @And("The user validates that login is successful")
-    public void the_user_validates_that_login_is_successful() {
+    @And("The user validate that login is successful")
+    public void the_user_validate_that_login_is_successful() {
         accountPage.verifyThatTheCustomerSuccessfulLogin();
 
     }
@@ -95,11 +95,36 @@ public class Steps extends Base {
 
     }
 
-    @And("The user validates the current balance")
-    public void the_user_validates_the_current_balance() {
+    @And("The user validate the current balance")
+    public void the_user_validate_the_current_balance() {
         accountPage.verifyTheAccBalance();
 
     }
+
+    @And("The user select Transactions")
+    public void the_user_select_transactions() {
+        accountPage.clickTransactions();
+
+    }
+
+    @And("The user validate that the transaction appears")
+    public void the_user_validate_that_the_transaction_appears() {
+        accountPage.verifyThatTheTransactionsAppears();
+
+    }
+
+    @When("The user click Back button")
+    public void the_user_click_back_button() {
+        accountPage.clickBackButton();
+
+    }
+
+    @Then("The user return to the account page")
+    public void the_user_return_to_the_account_page() {
+        accountPage.verifyThatTheAccountPageIsDisplayed();
+
+    }
+
 
     @After
     public void closeBrowser(){
