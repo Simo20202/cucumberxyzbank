@@ -4,7 +4,7 @@ Feature: Digital Banking
     Given The user is on the XYZ Banking home page
     And The user click customer login
     And The user validates that your name label is displayed
-    And The user select a customer name
+    And The user select customer number one
     And The user click login
     And The user validates that login is successful
     And The user select deposit

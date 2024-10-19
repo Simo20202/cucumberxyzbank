@@ -26,8 +26,8 @@ public class Steps extends Base {
         homePage.verifyThatYourNameLabelIsDisplayed();
 
     }
-    @And("The user select a customer name")
-    public void the_user_select_a_customer_name() {
+    @And("The user select customer number one")
+    public void the_user_select_customer_number_one() {
         homePage.selectCustomerName();
 
 
