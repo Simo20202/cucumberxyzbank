@@ -17,11 +17,14 @@ public class AccountPage {
     @FindBy(xpath = "//button[contains(.,'Deposit')]")
     WebElement deposit_xpath;
 
-    @FindBy(xpath = "//button[contains(.,'Deposit')]")
+    @FindBy(xpath = "//input[@placeholder='amount']")
     WebElement amountToBeDeposited_xpath;
 
     @FindBy(xpath = "//button[@type='submit'][contains(.,'Deposit')]")
-    WebElement DepositButton_xpath;
+    WebElement depositButton_xpath;
+
+    @FindBy(xpath = "//span[contains(.,'Deposit Successful')]")
+    WebElement depositSuccess_xpath;
 
     public AccountPage(WebDriver driver){
         this.driver = driver;
@@ -37,11 +40,17 @@ public class AccountPage {
     }
 
     public void enterAmountTobeDeposited(String deposit){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(amountToBeDeposited_xpath));
         amountToBeDeposited_xpath.sendKeys(deposit);
     }
 
     public void clickDepositButton(){
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(DepositButton_xpath));
-        DepositButton_xpath.click();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(depositButton_xpath));
+        depositButton_xpath.click();
+    }
+
+    public void verifyThatTheDepositWasSuccessful(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(depositSuccess_xpath));
+        depositSuccess_xpath.isDisplayed();
     }
 }

@@ -59,6 +59,7 @@ public class Steps extends Base {
     }
     @Then("The Deposit is successful")
     public void the_deposit_is_successful() {
+        accountPage.verifyThatTheDepositWasSuccessful();
 
     }
 
