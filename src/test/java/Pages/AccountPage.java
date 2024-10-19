@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -25,6 +26,10 @@ public class AccountPage {
 
     @FindBy(xpath = "//span[contains(.,'Deposit Successful')]")
     WebElement depositSuccess_xpath;
+
+    // Scenario 2
+    @FindBy(xpath = "//select[@id='accountSelect']")
+    WebElement accNumberTwo_xpath;
 
     public AccountPage(WebDriver driver){
         this.driver = driver;
@@ -52,5 +57,11 @@ public class AccountPage {
     public void verifyThatTheDepositWasSuccessful(){
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(depositSuccess_xpath));
         depositSuccess_xpath.isDisplayed();
+    }
+
+    // Scenario 2
+    public void selectAccountNumberTwo(){
+        Select dropdown = new Select(accNumberTwo_xpath);
+        dropdown.selectByVisibleText("1005");
     }
 }

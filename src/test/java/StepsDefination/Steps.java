@@ -76,6 +76,12 @@ public class Steps extends Base {
 
     }
 
+    @And("The user select the second account")
+    public void the_user_select_the_second_account() {
+        accountPage.selectAccountNumberTwo();
+
+    }
+
     @After
     public void closeBrowser(){
         driver.quit();
