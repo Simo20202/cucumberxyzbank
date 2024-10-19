@@ -17,10 +17,11 @@ public class Steps extends Base {
     }
     @And("The user click customer login")
     public void the_user_click_customer_login() {
-
+        homePage.clickCustomerLogin();
     }
     @And("The user select a customer name")
     public void the_user_select_a_customer_name() {
+        homePage.selectYourName();
 
     }
     @And("The user click login")
