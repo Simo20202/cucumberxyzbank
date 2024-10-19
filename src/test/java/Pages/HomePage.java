@@ -27,7 +27,10 @@ public class HomePage {
     WebElement yourNameDrp_xpath;
 
     @FindBy(xpath = "//button[contains(.,'Login')]")
-    WebElement login_xpath;
+    WebElement loginButton_xpath;
+
+    @FindBy(xpath = "//button[contains(.,'Logout')]")
+    WebElement logoutButton_xpath;
 
     public HomePage(WebDriver driver){
         this.driver =driver;
@@ -53,8 +56,12 @@ public class HomePage {
         dropdown.selectByVisibleText("Hermoine Granger");
     }
 
-    public void clickLoginButton(){
-        login_xpath.click();
+    public void clickLogin(){
+        loginButton_xpath.click();
+    }
+
+    public void clickLogout(){
+        logoutButton_xpath.click();
     }
 
 }

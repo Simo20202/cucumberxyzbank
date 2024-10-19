@@ -34,7 +34,7 @@ public class Steps extends Base {
     }
     @And("The user click login")
     public void the_user_click_login() {
-        homePage.clickLoginButton();
+        homePage.clickLogin();
 
     }
     @And("The user validates that login is successful")
@@ -60,6 +60,12 @@ public class Steps extends Base {
     @Then("The Deposit is successful")
     public void the_deposit_is_successful() {
         accountPage.verifyThatTheDepositWasSuccessful();
+
+    }
+
+    @And("The user Logout")
+    public void the_user_logout() {
+        homePage.clickLogout();
 
     }
 
