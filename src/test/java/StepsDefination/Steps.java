@@ -95,12 +95,6 @@ public class Steps extends Base {
 
     }
 
-    @And("The user validate the current balance")
-    public void the_user_validate_the_current_balance() {
-        accountPage.verifyTheAccBalance();
-
-    }
-
     @And("The user select Transactions")
     public void the_user_select_transactions() {
         accountPage.clickTransactions();
@@ -144,6 +138,12 @@ public class Steps extends Base {
     @Then("Transaction is successful confirmation message should be displayed")
     public void transaction_is_successful_confirmation_message_should_be_displayed() {
         accountPage.verifyThatTheWithdrawWasSuccessful();
+
+    }
+
+    @Then("The user validate that the current balance is the original balance")
+    public void the_user_validate_that_the_current_balance_is_the_original_balance() {
+        accountPage.verifyThatTheCurrentBalanceIsTheSameAsOriginalBalance();
 
     }
 

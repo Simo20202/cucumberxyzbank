@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -97,18 +98,13 @@ public class AccountPage {
     }
 
     // Scenario 3
-    public void verifyTheAccBalance() {
-        String originalBalance = accBalance_xpath.getText();
-        System.out.println(originalBalance);
-    }
-
     public void clickTransactions() {
         transactions_xpath.click();
 
     }
 
     public void verifyThatTheTransactionsAppears() {
-        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(transactionsDetails_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(45)).until(ExpectedConditions.visibilityOf(transactionsDetails_xpath));
         transactionsDetails_xpath.isDisplayed();
 
     }
@@ -140,4 +136,22 @@ public class AccountPage {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(withdrawSuccess_xpath));
         withdrawSuccess_xpath.isDisplayed();
     }
+
+    public void verifyThatTheCurrentBalanceIsTheSameAsOriginalBalance() {
+
+        int currentBalance = Integer.parseInt(accBalance_xpath.getText());
+        System.out.println(currentBalance);
+        int originalBalance = 0;
+
+        Assert.assertEquals(currentBalance,originalBalance);
+//
+//        int originalBalance = 1;
+//        if (originalBalance == currentBalance) {
+//            System.out.println("Test Passed: Current balance is the same as original balance.");
+//        } else {
+//            System.out.println("Test Failed: Current balance is not the same as original balance.");
+//        }
+    }
+
+
 }

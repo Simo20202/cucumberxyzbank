@@ -49,7 +49,6 @@ Feature: Digital Banking
     And The user select customer number three
     And The user click login
     And The user validate that login is successful
-    And The user validate the current balance
     And The user select deposit
     And The user enters the amount to be deposited<deposit>
     When The user click deposit
@@ -62,7 +61,8 @@ Feature: Digital Banking
     And The user enters the amount to be Withdrawn <withdraw>
     When The user click withdraw
     Then Transaction is successful confirmation message should be displayed
+    And The user validate that the current balance is the original balance
     Examples:
-      | deposit |withdraw|
-      | 31459   |31459   |
+      | deposit | withdraw |
+      | 31459   | 31459    |
 
