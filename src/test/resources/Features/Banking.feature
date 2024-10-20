@@ -42,7 +42,7 @@ Feature: Digital Banking
       | 1500    |
 
 
-  Scenario Outline: Ensure that a user can successful make a deposit and wthdrawl on the first account
+  Scenario Outline: Ensure that current balance is the same as the original balance after transacting
     Given The user is on the XYZ Banking home page
     And The user click customer login
     And The user validate that your name label is displayed
