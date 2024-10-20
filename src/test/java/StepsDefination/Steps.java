@@ -138,10 +138,12 @@ public class Steps extends Base {
 
     @When("The user click withdraw")
     public void the_user_click_withdraw() {
+        accountPage.clickWithdrawButton();
 
     }
     @Then("Transaction is successful confirmation message should be displayed")
     public void transaction_is_successful_confirmation_message_should_be_displayed() {
+        accountPage.verifyThatTheWithdrawWasSuccessful();
 
     }
 
