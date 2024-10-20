@@ -21,7 +21,7 @@ public class AccountPage {
     WebElement deposit_xpath;
 
     @FindBy(xpath = "//input[@placeholder='amount']")
-    WebElement amountToBeDeposited_xpath;
+    WebElement amount_xpath;
 
     @FindBy(xpath = "//button[@type='submit'][contains(.,'Deposit')]")
     WebElement depositButton_xpath;
@@ -46,6 +46,17 @@ public class AccountPage {
     @FindBy(xpath = "//button[contains(.,'Back')]")
     WebElement backButton_xpath;
 
+    @FindBy(xpath = "//button[contains(.,'Withdrawl')]")
+    WebElement withdrawl_xpath;
+
+    @FindBy(xpath = "//button[@type='submit'][contains(.,'Withdraw')]")
+    WebElement withdrawButton_xpath;
+
+    @FindBy(xpath = "//span[contains(.,'Transaction successful')]")
+    WebElement withdrawSuccess_xpath;
+
+
+
     public AccountPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -60,8 +71,8 @@ public class AccountPage {
     }
 
     public void enterAmountTobeDeposited(String deposit) {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(amountToBeDeposited_xpath));
-        amountToBeDeposited_xpath.sendKeys(deposit);
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(amount_xpath));
+        amount_xpath.sendKeys(deposit);
     }
 
     public void clickDepositButton() {
@@ -97,7 +108,7 @@ public class AccountPage {
     }
 
     public void verifyThatTheTransactionsAppears() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(transactionsDetails_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(transactionsDetails_xpath));
         transactionsDetails_xpath.isDisplayed();
 
     }
@@ -109,5 +120,24 @@ public class AccountPage {
     public void verifyThatTheAccountPageIsDisplayed(){
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(welcomeTitle_xpath));
         welcomeTitle_xpath.isDisplayed();
+    }
+
+    public void clickWithdrawl(){
+        withdrawl_xpath.click();
+
+    }
+
+    public void enterAmountTobeWithdrawn(String deposit) {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(amount_xpath));
+        amount_xpath.sendKeys(deposit);
+    }
+
+    public void clickWithdrawButton(){
+        withdrawButton_xpath.click();
+    }
+
+    public void verifyThatTheWithdrawWasSuccessful() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(withdrawSuccess_xpath));
+        withdrawSuccess_xpath.isDisplayed();
     }
 }

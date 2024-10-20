@@ -47,8 +47,8 @@ public class Steps extends Base {
         accountPage.clickDeposit();
 
     }
-    @And("The user enters deposit{int}")
-    public void the_user_enters_deposit(Integer deposit) {
+    @And("The user enters the amount to be deposited{int}")
+    public void the_user_enters_the_amount_to_be_deposited(Integer deposit) {
         accountPage.enterAmountTobeDeposited(String.valueOf(deposit));
 
     }
@@ -57,8 +57,8 @@ public class Steps extends Base {
         accountPage.clickDepositButton();
 
     }
-    @Then("The Deposit is successful")
-    public void the_deposit_is_successful() {
+    @Then("Deposit is successful confirmation message should be displayed")
+    public void deposit_is_successful_confirmation_message_should_be_displayed() {
         accountPage.verifyThatTheDepositWasSuccessful();
 
     }
@@ -124,6 +124,27 @@ public class Steps extends Base {
         accountPage.verifyThatTheAccountPageIsDisplayed();
 
     }
+
+    @And("The user select withdrawl")
+    public void the_user_select_withdrawl() {
+        accountPage.clickWithdrawl();
+
+    }
+    @And("The user enters the amount to be Withdrawn {int}")
+    public void the_user_enters_the_amount_to_be_withdrawn(Integer withdraw) {
+        accountPage.enterAmountTobeWithdrawn(String.valueOf(withdraw));
+
+    }
+
+    @When("The user click withdraw")
+    public void the_user_click_withdraw() {
+
+    }
+    @Then("Transaction is successful confirmation message should be displayed")
+    public void transaction_is_successful_confirmation_message_should_be_displayed() {
+
+    }
+
 
 
     @After

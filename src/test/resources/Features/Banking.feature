@@ -8,9 +8,9 @@ Feature: Digital Banking
     And The user click login
     And The user validate that login is successful
     And The user select deposit
-    And The user enters deposit<deposit>
+    And The user enters the amount to be deposited<deposit>
     When The user click deposit
-    Then The Deposit is successful
+    Then Deposit is successful confirmation message should be displayed
     And The user Logout
     Examples:
       | deposit |
@@ -25,17 +25,17 @@ Feature: Digital Banking
     And The user click login
     And The user validate that login is successful
     And The user select deposit
-    And The user enters deposit<deposit>
+    And The user enters the amount to be deposited<deposit>
     When The user click deposit
-    Then The Deposit is successful
+    Then Deposit is successful confirmation message should be displayed
     And The user select the second account
-    And The user enters deposit<deposit>
+    And The user enters the amount to be deposited<deposit>
     When The user click deposit
-    Then The Deposit is successful
+    Then Deposit is successful confirmation message should be displayed
     And The user select the third account
-    And The user enters deposit<deposit>
+    And The user enters the amount to be deposited<deposit>
     When The user click deposit
-    Then The Deposit is successful
+    Then Deposit is successful confirmation message should be displayed
     And The user Logout
     Examples:
       | deposit |
@@ -51,14 +51,18 @@ Feature: Digital Banking
     And The user validate that login is successful
     And The user validate the current balance
     And The user select deposit
-    And The user enters deposit<deposit>
+    And The user enters the amount to be deposited<deposit>
     When The user click deposit
-    Then The Deposit is successful
+    Then Deposit is successful confirmation message should be displayed
     And The user select Transactions
     And The user validate that the transaction appears
     When The user click Back button
     Then The user return to the account page
+    And The user select withdrawl
+    And The user enters the amount to be Withdrawn <withdraw>
+    When The user click withdraw
+    Then Transaction is successful confirmation message should be displayed
     Examples:
-      | deposit |
-      | 31459   |
+      | deposit |withdraw|
+      | 31459   |31459   |
 
