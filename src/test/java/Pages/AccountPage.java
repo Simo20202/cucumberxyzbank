@@ -41,8 +41,8 @@ public class AccountPage {
     @FindBy(xpath = "//button[contains(.,'Transactions')]")
     WebElement transactions_xpath;
 
-    @FindBy(xpath = "//td[@class='ng-binding'][contains(.,'31459')]")
-    WebElement transactionsDetails_xpath;
+    @FindBy(xpath = "//td[contains(.,'Credit')]")
+    WebElement creditTransactions_xpath;
 
     @FindBy(xpath = "//button[contains(.,'Back')]")
     WebElement backButton_xpath;
@@ -55,6 +55,9 @@ public class AccountPage {
 
     @FindBy(xpath = "//span[contains(.,'Transaction successful')]")
     WebElement withdrawSuccess_xpath;
+
+    @FindBy(xpath = "//td[contains(.,'Debit')]")
+    WebElement debitTransaction_xpath;
 
 
 
@@ -103,9 +106,9 @@ public class AccountPage {
 
     }
 
-    public void verifyThatTheTransactionsAppears() {
-        new WebDriverWait(driver, Duration.ofSeconds(45)).until(ExpectedConditions.visibilityOf(transactionsDetails_xpath));
-        transactionsDetails_xpath.isDisplayed();
+    public void verifyThatTheCreditTransactionsAppears() {
+        new WebDriverWait(driver, Duration.ofSeconds(45)).until(ExpectedConditions.visibilityOf(creditTransactions_xpath));
+        creditTransactions_xpath.isDisplayed();
 
     }
 
@@ -153,5 +156,10 @@ public class AccountPage {
 //        }
     }
 
+    public void verifyThatTheDebitTransactionsAppears() {
+        new WebDriverWait(driver, Duration.ofSeconds(45)).until(ExpectedConditions.visibilityOf(debitTransaction_xpath));
+        debitTransaction_xpath.isDisplayed();
+
+    }
 
 }

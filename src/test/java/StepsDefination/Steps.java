@@ -101,9 +101,9 @@ public class Steps extends Base {
 
     }
 
-    @And("The user validate that the transaction appears")
-    public void the_user_validate_that_the_transaction_appears() {
-        accountPage.verifyThatTheTransactionsAppears();
+    @And("The user validate that the credit transaction appears")
+    public void the_user_validate_that_the_credit_transaction_appears() {
+        accountPage.verifyThatTheCreditTransactionsAppears();
 
     }
 
@@ -144,6 +144,12 @@ public class Steps extends Base {
     @Then("The user validate that the current balance is the original balance")
     public void the_user_validate_that_the_current_balance_is_the_original_balance() {
         accountPage.verifyThatTheCurrentBalanceIsTheSameAsOriginalBalance();
+
+    }
+
+    @Then("The user validate that the debit transaction appears")
+    public void the_user_validate_that_the_debit_transaction_appears() {
+        accountPage.verifyThatTheDebitTransactionsAppears();
 
     }
 
