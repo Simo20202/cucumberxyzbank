@@ -1,4 +1,4 @@
-package StepsDefination;
+package StepsDefinition;
 
 import Pages.AccountPage;
 import Pages.HomePage;
