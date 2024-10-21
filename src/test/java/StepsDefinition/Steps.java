@@ -1,10 +1,14 @@
 package StepsDefinition;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Steps extends Base {
 
@@ -152,7 +156,14 @@ public class Steps extends Base {
 
     }
 
+    @AfterStep
+    public void addScreenshot(Scenario scenario){
+        if (scenario.isFailed()){
+            byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png","image");
+        }
 
+    }
 
     @After
     public void closeBrowser(){
