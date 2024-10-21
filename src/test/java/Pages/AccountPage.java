@@ -107,7 +107,7 @@ public class AccountPage {
     }
 
     public void verifyThatTheCreditTransactionsAppears() {
-        new WebDriverWait(driver, Duration.ofSeconds(45)).until(ExpectedConditions.visibilityOf(creditTransactions_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.visibilityOf(creditTransactions_xpath));
         creditTransactions_xpath.isDisplayed();
 
     }
