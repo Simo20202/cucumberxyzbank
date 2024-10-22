@@ -50,7 +50,7 @@ public class Steps extends Base {
         accountPage.clickDeposit();
 
     }
-    @And("The user enters the amount to be deposited{int}")
+    @And("The user enters the amount to be deposited {int}")
     public void the_user_enters_the_amount_to_be_deposited(Integer deposit) {
         accountPage.enterAmountTobeDeposited(String.valueOf(deposit));
 

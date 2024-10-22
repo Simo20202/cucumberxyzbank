@@ -8,7 +8,7 @@ Feature: Digital Banking
     And The user click login
     And The user validate that login is successful
     And The user select deposit
-    And The user enters the amount to be deposited<deposit>
+    And The user enters the amount to be deposited <deposit>
     When The user click deposit
     Then Deposit is successful confirmation message should be displayed
     And The user Logout
@@ -25,15 +25,15 @@ Feature: Digital Banking
     And The user click login
     And The user validate that login is successful
     And The user select deposit
-    And The user enters the amount to be deposited<deposit>
+    And The user enters the amount to be deposited <deposit>
     When The user click deposit
     Then Deposit is successful confirmation message should be displayed
     And The user select the second account
-    And The user enters the amount to be deposited<deposit>
+    And The user enters the amount to be deposited <deposit>
     When The user click deposit
     Then Deposit is successful confirmation message should be displayed
     And The user select the third account
-    And The user enters the amount to be deposited<deposit>
+    And The user enters the amount to be deposited <deposit>
     When The user click deposit
     Then Deposit is successful confirmation message should be displayed
     And The user Logout
@@ -50,7 +50,7 @@ Feature: Digital Banking
     And The user click login
     And The user validate that login is successful
     And The user select deposit
-    And The user enters the amount to be deposited<deposit>
+    And The user enters the amount to be deposited <deposit>
     When The user click deposit
     Then Deposit is successful confirmation message should be displayed
     And The user select Transactions
