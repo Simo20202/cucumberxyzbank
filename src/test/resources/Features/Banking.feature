@@ -54,6 +54,8 @@ Feature: Digital Banking
     When The user click deposit
     Then Deposit is successful confirmation message should be displayed
     And The user select Transactions
+    And The user click Back button
+    And The user select Transactions
     And The user validate that the credit transaction appears
     When The user click Back button
     Then The user return to the account page
@@ -62,6 +64,8 @@ Feature: Digital Banking
     When The user click withdraw
     Then Transaction is successful confirmation message should be displayed
     And The user validate that the current balance is the original balance
+    And The user select Transactions
+    And The user click Back button
     And The user select Transactions
     And The user validate that the debit transaction appears
     And The user Logout

@@ -107,12 +107,13 @@ public class AccountPage {
     }
 
     public void verifyThatTheCreditTransactionsAppears() {
-        new WebDriverWait(driver, Duration.ofSeconds(60)).until(ExpectedConditions.visibilityOf(creditTransactions_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(creditTransactions_xpath));
         creditTransactions_xpath.isDisplayed();
 
     }
 
     public void clickBackButton(){
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(backButton_xpath));
         backButton_xpath.click();
     }
 
@@ -157,7 +158,7 @@ public class AccountPage {
     }
 
     public void verifyThatTheDebitTransactionsAppears() {
-        new WebDriverWait(driver, Duration.ofSeconds(45)).until(ExpectedConditions.visibilityOf(debitTransaction_xpath));
+        new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(debitTransaction_xpath));
         debitTransaction_xpath.isDisplayed();
 
     }
