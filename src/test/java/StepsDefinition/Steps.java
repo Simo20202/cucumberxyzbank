@@ -99,8 +99,9 @@ public class Steps extends Base {
     }
 
     @And("The user select Transactions")
-    public void the_user_select_transactions() {
+    public void the_user_select_transactions() throws InterruptedException {
         accountPage.clickTransactions();
+        Thread.sleep(2000);
 
     }
 
