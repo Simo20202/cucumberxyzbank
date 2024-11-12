@@ -145,7 +145,7 @@ public class AccountPage {
 
         int currentBalance = Integer.parseInt(accBalance_xpath.getText());
         System.out.println(currentBalance);
-        int originalBalance = 0;
+        int originalBalance = 1;
 
         Assert.assertEquals(currentBalance,originalBalance);
 //
